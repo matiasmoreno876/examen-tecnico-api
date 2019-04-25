@@ -8,10 +8,10 @@ module.exports = {
 };
 
 function getItems(req, res) {
-    ApiMeli.getItems()
-        .then(function (data) {
+    var query = req.query.q;
 
-            // res.status(200).send(data);
+    ApiMeli.getItems(query)
+        .then(function (data) {
             res.status(200).send(ListItemResponseDto.from(data));
         })
         .catch(function (err) {
