@@ -1,9 +1,11 @@
 'use strict'
 
 var express = require('express');
-var ItemController = require('../controllers/item-controller');
+var itemController = require('../controllers/item-controller');
 var api = express.Router();
 
-api.get('/items', ItemController.getItems);
+api.get('/items', itemController.getItems);
+api.get('/items/:id', itemController.getItemWithDetails);
+
 
 module.exports = api;
