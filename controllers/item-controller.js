@@ -6,7 +6,7 @@ var listItemResponseDto = require('../dtos/listItem-response-dto');
 
 module.exports = {
     getItems,
-    getItemWithDetails
+    getItemWithDescription
 };
 
 function getItems(req, res) {
@@ -25,7 +25,7 @@ function getItems(req, res) {
         })
 }
 
-function getItemWithDetails(req, res) {
+function getItemWithDescription(req, res) {
   var idItem = req.params.id;
     apiMeli.getItem(idItem)
         .then(function (data) {
