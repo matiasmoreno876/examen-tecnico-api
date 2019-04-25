@@ -6,7 +6,8 @@ const MELI_END_POINT_ITEM_BY_ID = 'https://api.mercadolibre.com/items/';
 
 module.exports = {
     getItems,
-    getItem
+    getItem,
+    getDescription
 };
 
 function getItems(query) {
@@ -26,6 +27,23 @@ function getItem(idItem) {
     return new Promise(function (done, reject) {
         request(MELI_END_POINT_ITEM_BY_ID + idItem, function (err, response, body) {
 
+            if (response) {
+                if (response.statusCode === 200) {
+                    var data = JSON.parse(body);
+                    done(data);
+                } else {
+                    errParse(body, reject);
+                }
+            } else {
+                reject('Hubo un error al consultar la API de Meli');
+            }
+        })
+    })
+}
+
+function getDescription(idItem) {
+    return new Promise(function (done, reject) {
+        request(MELI_END_POINT_ITEM_BY_ID + idItem + '/description', function (err, response, body) {
             if (response) {
                 if (response.statusCode === 200) {
                     var data = JSON.parse(body);
