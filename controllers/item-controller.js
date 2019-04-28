@@ -15,7 +15,7 @@ function getItems(req, res) {
     apiMeli.getItems(query)
         .then(function (data) {
             if (data.results.length === 0) {
-                res.status(204).send({message: 'No hay publicaciones que coincidan con tu búsqueda.'});
+                res.status(200).send({statusCode: 204, message: 'No hay publicaciones que coincidan con tu búsqueda.'});
             } else {
                 res.status(200).send(listItemResponseDto.from(data));
             }
