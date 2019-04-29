@@ -2,7 +2,7 @@
 
 Este proyecto fue generado con Node.js version 8.10.0
 
-## Instalación y despliege
+## Instalación y despliegue
 Correr el siguiente comando `npm install` para realizar la instalación de las dependencias declaradas en el `package.json`
 
 Correr el siguente comando `npm start` para desplegar la API
