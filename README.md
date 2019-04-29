@@ -1,13 +1,13 @@
-# API Examen técnico front-end Mercado Libre
+## API Examen técnico front-end Mercado Libre
 
 Este proyecto fue generado con Node.js version 8.10.0
 
-#Instalación y despliege
+## Instalación y despliege
 Correr el siguiente comando `npm install` para realizar la instalación de las dependencias declaradas en el `package.json`
 
 Correr el siguente comando `npm start` para desplegar la API
 
-#End-points
+## End-points
 
 El server se corre en `http://localhost:4201/api/`
 
